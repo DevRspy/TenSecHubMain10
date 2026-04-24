@@ -1,5 +1,5 @@
 local success, result = pcall(function()
-    return game:HttpGet("https://raw.githubusercontent.com/DevRspy/TenSecHubGamelist/refs/heads/main/GameList.lua")
+    return game:HttpGet("https://raw.githubusercontent.com/DevRspy/TenSecHubGamelist/refs/heads/main/GameList")
 end)
 
 if success then
