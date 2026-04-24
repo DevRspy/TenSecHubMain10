@@ -1,7 +1,7 @@
 local placeId = game.PlaceId
 
 if placeId == 99883452374538 then     
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevRspy/MainTenSecHub/refs/heads/main/TenSecHub"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevRspy/MainTenSecHub/refs/heads/main/TenSecHub"))() -- Prison Break Tower
 
 else
     warn("TenSecHub: Game ID (" .. tostring(placeId) .. ") is not supported.")
