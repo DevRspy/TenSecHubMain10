@@ -1,13 +1,8 @@
-local success, result = pcall(function()
-    return game:HttpGet("https://raw.githubusercontent.com/DevRspy/TenSecHubGamelist/refs/heads/main/GameList")
-end)
+local placeId = game.PlaceId
 
-if success then
-    if result:find("404: Not Found") then
-        print("Can't Find A File.")
-    else
-        loadstring(result)()
-    end
+if placeId == 99883452374538 then     
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DevRspy/MainTenSecHub/refs/heads/main/TenSecHub"))()
+
 else
-    warn("Ss: " .. tostring(result))
+    warn("TenSecHub: Game ID (" .. tostring(placeId) .. ") is not supported.")
 end
