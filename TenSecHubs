@@ -1,11 +1,13 @@
-local HttpGet = game.HttpGet
-local GameId: number = game.GameId
+local success, result = pcall(function()
+    return game:HttpGet("https://raw.githubusercontent.com/DevRspy/TenSecHubGamelist/refs/heads/main/GameList.lua")
+end)
 
-local Games: {[number]: string} = loadstring(
-  HttpGet(game, "https://raw.githubusercontent.com/DevRspy/TenSecHubGamelist/refs/heads/main/GameList.lua")
-)() :: any
-
-local URL: string? = Games[GameId]
-if not URL then return end
-
-loadstring(HttpGet(game, URL))()
+if success then
+    if result:find("404: Not Found") then
+        print("Can't Find A File.")
+    else
+        loadstring(result)()
+    end
+else
+    warn("Ss: " .. tostring(result))
+end
